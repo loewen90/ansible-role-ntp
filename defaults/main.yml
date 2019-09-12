@@ -13,6 +13,9 @@ ntp_servers:
   - "2{{ '.' + ntp_area if ntp_area else '' }}.pool.ntp.org iburst"
   - "3{{ '.' + ntp_area if ntp_area else '' }}.pool.ntp.org iburst"
 
+ntp_peers:
+  - {{ peer }}
+
 ntp_restrict:
   - "127.0.0.1"
   - "::1"
