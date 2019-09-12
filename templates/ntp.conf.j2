@@ -19,6 +19,12 @@ filegen clockstats file clockstats type day enable
 server {{ item }}
 {% endfor %}
 
+#When creating more than one local ntp-server
+#Use peers the name of your ntp
+{% for item in ntp_peers %}
+peer {{ item }}
+{⅜ endfor %}
+
 # Permit time synchronization with our time source, but do not
 # permit the source to query or modify the service on this system.
 restrict default nomodify notrap nopeer noquery
